@@ -1,9 +1,14 @@
+"use client";
+
 import React from 'react'
 import { Button } from './ui/button'
 import { Heart } from 'lucide-react'
 import Link from 'next/link'
+import { useWallet } from '@/contexts/WalletContext'
 
 const Navbar = () => {
+  const { account, connectWallet, disconnectWallet } = useWallet();
+
   return (
     <nav className='border-b'>
       <div className='flex h-16 items-center px-4 container mx-auto'>
@@ -18,7 +23,9 @@ const Navbar = () => {
           <Link href={"/dashboard"}>
             <Button variant="ghost">Dashboard</Button>
           </Link>
-          <Button >Connect Wallet</Button>
+          <Button onClick={account ? disconnectWallet : connectWallet}>
+            {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : 'Connect Wallet'}
+          </Button>
         </div>
       </div>
     </nav >

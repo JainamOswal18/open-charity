@@ -5,11 +5,12 @@ import { DonationHistory } from "@/components/dashboard/darsboard-history";
 import { DashboardStats } from "@/components/dashboard/darsboard-stats";
 import { NFTDonations } from "@/components/dashboard/nft-donations";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import { useAccount } from "wagmi";
+import { useWallet } from "@/contexts/WalletContext";
 
 export default function Dashboard() {
   // const { isConnected } = useAccount();
-  const { isConnected } = { isConnected: true };
+  const { account } = useWallet();
+  const isConnected = !!account;
 
   if (!isConnected) {
     return <ConnectWallet />;

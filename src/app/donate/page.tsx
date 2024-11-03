@@ -5,10 +5,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CryptoDonationForm } from "@/components/donate/crypto-donation-form";
 import { NFTDonationForm } from "@/components/donate/nft-donation-form";
 import ConnectWallet from "@/components/connect-wallet";
+import { useWallet } from "@/contexts/WalletContext";
 // import { useAccount } from "wagmi";
 
 export default function DonatePage() {
-  const { isConnected } = { isConnected: true };
+  const { account } = useWallet();
+  const isConnected = !!account;
 
   if (!isConnected) {
     return <ConnectWallet />;
@@ -16,7 +18,7 @@ export default function DonatePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Make a Donation</h1>
+      <h1 className="text-3xl text-center font-bold mb-8">Make a Donation</h1>
 
       <Card className="max-w-2xl mx-auto">
         <Tabs defaultValue="crypto" className="w-full">
