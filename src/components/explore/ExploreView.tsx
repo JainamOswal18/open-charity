@@ -5,6 +5,8 @@ import { ExploreHeader } from './ExploreHeader';
 import { FilterSection } from './FilterSection';
 import { CampaignGrid } from './CampaignGrid';
 import { getCharityInfo } from '@/contexts/donationUtils';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 // Define charity data
 const CHARITIES = [
@@ -23,11 +25,19 @@ export default function ExploreView() {
     const fetchCharityData = async () => {
       const data = await Promise.all(
         CHARITIES.map(async (charity) => {
-          const amountRaised = await getCharityInfo(charity.address);
-          return {
-            ...charity,
-            amountRaised: parseFloat(amountRaised),
-          };
+          try {
+            const amountRaised = await getCharityInfo(charity.address);
+            return {
+              ...charity,
+              amountRaised: amountRaised !== undefined ? parseFloat(amountRaised) : undefined,
+            };
+          } catch (error) {
+            console.error(`Error fetching data for ${charity.name}:`, error);
+            return {
+              ...charity,
+              amountRaised: undefined,
+            };
+          }
         })
       );
       setCharityData(data);
@@ -47,7 +57,12 @@ export default function ExploreView() {
 
   return (
     <main className="container mx-auto px-4 py-8">
-      <ExploreHeader searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div className="flex justify-between items-center mb-8">
+        <ExploreHeader searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Link href="/donate" passHref>
+          <Button size="lg">Donate Now</Button>
+        </Link>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
         <FilterSection selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         <div className="lg:col-span-3">
