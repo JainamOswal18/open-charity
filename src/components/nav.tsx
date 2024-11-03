@@ -17,6 +17,9 @@ const Navbar = () => {
           <Link href={'/'} className='text-xl font-bold'>Opencharity</Link>
         </div>
         <div className='flex items-center ml-auto space-x-4'>
+          <Link href={"/"}>
+            <Button variant="ghost" >Home</Button>
+          </Link>
           <Link href={"/explore"}>
             <Button variant="ghost" >Explore</Button>
           </Link>

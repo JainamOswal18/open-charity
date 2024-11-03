@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 
-const CONTRACT_ADDRESS = "0x56fD3089FEDDc293B84747b2e32E7fFC7C336727";
+const CONTRACT_ADDRESS = "0x21414f02dafe8441bA2a88A6f6790A531E971171";
 const CONTRACT_ABI = [
 	{
 		"inputs": [],
@@ -53,6 +53,12 @@ const CONTRACT_ABI = [
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
 			}
 		],
 		"name": "DonationMade",
@@ -69,6 +75,76 @@ const CONTRACT_ABI = [
 		"name": "registerCharity",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "donations",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "charity",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_donor",
+				"type": "address"
+			}
+		],
+		"name": "getDonationHistory",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "charity",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CharityDonation.Donation[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -166,6 +242,42 @@ export const donateCrypto = async (charityAddress: string, amount: string) => {
       return receipt;
     } catch (error) {
       console.error("Error in donation transaction:", error);
+      throw error;
+    }
+  } else {
+    throw new Error("Ethereum object not found, install MetaMask.");
+  }
+};
+
+export const getDonationHistory = async (walletAddress: string) => {
+  if (typeof window.ethereum !== 'undefined') {
+    try {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+
+      const donations = await contract.getDonationHistory(walletAddress);
+      return donations;
+    } catch (error) {
+      console.error("Error fetching donation history:", error);
+      throw error;
+    }
+  } else {
+    throw new Error("Ethereum object not found, install MetaMask.");
+  }
+};
+
+
+export const getCharityInfo = async (charityAddress: string) => {
+  if (typeof window.ethereum !== 'undefined') {
+    try {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
+
+      const totalDonations = await contract.getTotalDonations(charityAddress);
+      return ethers.formatEther(totalDonations);
+    } catch (error) {
+      console.error("Error fetching charity info:", error);
       throw error;
     }
   } else {
