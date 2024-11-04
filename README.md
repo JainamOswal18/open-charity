@@ -115,10 +115,10 @@ For smart contract testing and deployment:
 We welcome contributions! Please fork the repository, create a feature branch, and submit a pull request with your changes.
 
 1. Fork the repository
-2. Create your branch (`git checkout -b feature/new-feature`)
+2. Clone the repository (`git clone https://github.com/JainamOswal18/open-charity.git`)
+3. Test and develop some new features/fix bugs.
 3. Commit your changes (`git commit -m "Add new feature"`)
-4. Push to the branch (`git push origin feature/new-feature`)    
-5. Open a pull request
+4. Open a pull request
 
 
 
