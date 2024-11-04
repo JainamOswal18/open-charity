@@ -130,9 +130,9 @@ This project is licensed under the MIT License.
 
 ## Acknowledgements
 
-[AIAchain](): For providing the blockchain infrastructure.
-[Next.js Documentation](): For extensive guidance on building apps with Next.js.
-[Remix IDE](): For smart contract deployment and testing.
+- [AIAchain](): For providing the blockchain infrastructure.
+- [Next.js Documentation](): For extensive guidance on building apps with Next.js.
+- [Remix IDE](): For smart contract deployment and testing.
 
 
 
