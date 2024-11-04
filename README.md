@@ -22,8 +22,9 @@ Open Charity is a decentralized application (dApp) that brings transparency and 
 ### Prerequisites
 
 Ensure you have the following installed:
-    - Node.js and npm: [Download here]()
-    - MetaMask or any EVM-compatible wallet: [Download here]()
+
+- Node.js and npm: [Download here]()
+- MetaMask or any EVM-compatible wallet: [Download here]()
 
 ### Installation
 
@@ -45,14 +46,18 @@ npm run dev
 
 Open http://localhost:3000 to view the application in the browser.
 
+
+
 ## Deployment
 
 To deploy the project, we recommend using [Vercel](), as Next.js works seamlessly with it:
-    1. Push your code to a GitHub repository.
-    2. Import the repository into Vercel and configure the necessary environment variables.
-    3. Deploy the application with a single click.
+1. Push your code to a GitHub repository.
+2. Import the repository into Vercel and configure the necessary environment variables.
+3. Deploy the application with a single click.
 
 For detailed steps, refer to [Next.js Deployment Documentation]().
+
+
 
 ## Usage
 
@@ -71,25 +76,31 @@ For detailed steps, refer to [Next.js Deployment Documentation]().
 
 - Access the dashboard to view a record of past donations, including transaction details, timestamps, and donation amounts.
 
+
+
 ## Smart Contract Overview
 
 The core functionality is handled by the `CharityDonation` smart contract, which is deployed on the AIAchain network. The contract provides:
 
-    - `registerCharity` : Allows only the contract owner to register verified charities.
-    - `donate` : Enables users to donate funds directly to a charity.
-    - `getTotalDonations` : Fetches the total donations for a specific charity.
-    - `checkRegisteredCharity` : Verifies if an address is registered as a charity.
+- `registerCharity` : Allows only the contract owner to register verified charities.
+- `donate` : Enables users to donate funds directly to a charity.
+- `getTotalDonations` : Fetches the total donations for a specific charity.
+- `checkRegisteredCharity` : Verifies if an address is registered as a charity.
     
 The contract ensures that funds are stored securely, and only authorized withdrawals can be processed.
+
+
 
 ## Testing on Remix IDE
 
 For smart contract testing and deployment:
 
-    1. Copy the smart contract code to [Remix IDE]().
-    2. Compile the contract using the correct Solidity version (e.g., 0.8.x) and evm version as london (inside advanced config).
-    3. Deploy on the AIAchain network by connecting Remix to MetaMask.
-    4. After deployment, note the contract address and update your frontend with this address.
+1. Copy the smart contract code to [Remix IDE]().
+2. Compile the contract using the correct Solidity version (e.g., 0.8.x) and evm version as london (inside advanced config).
+3. Deploy on the AIAchain network by connecting Remix to MetaMask.
+4. After deployment, note the contract address and update your frontend with this address.
+
+
 
 ## Roadmap
 
@@ -97,25 +108,31 @@ For smart contract testing and deployment:
 2. Dynamic Charity Registration: Implement a system for community-backed verification of new charities.
 3. Cross-Chain Compatibility: Integrate with other EVM-compatible chains for greater reach.
 
+
+
 ## Contributing
 
 We welcome contributions! Please fork the repository, create a feature branch, and submit a pull request with your changes.
 
-    1. Fork the repository
-    2. Create your branch (`git checkout -b feature/new-feature`)
-    3. Commit your changes (`git commit -m "Add new feature"`)
-    4. Push to the branch (`git push origin feature/new-feature`)    
-    5. Open a pull request
+1. Fork the repository
+2. Create your branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m "Add new feature"`)
+4. Push to the branch (`git push origin feature/new-feature`)    
+5. Open a pull request
+
+
 
 ## License
 
 This project is licensed under the MIT License.
 
+
+
 ## Acknowledgements
 
-    [AIAchain](): For providing the blockchain infrastructure.
-    [Next.js Documentation](): For extensive guidance on building apps with Next.js.
-    [Remix IDE](): For smart contract deployment and testing.
+[AIAchain](): For providing the blockchain infrastructure.
+[Next.js Documentation](): For extensive guidance on building apps with Next.js.
+[Remix IDE](): For smart contract deployment and testing.
 
 
 
