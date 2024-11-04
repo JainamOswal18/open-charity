@@ -3,7 +3,7 @@
 Open Charity is a decentralized application (dApp) that brings transparency and trust to charitable donations by leveraging blockchain technology on the [AIAchain](https://aiachain.org/) network. Users can donate to verified charities using cryptocurrency, with real-time tracking and transparent transaction records. Built with [Next.js](https://nextjs.org/) and deployed on AIAchain, Open Charity aims to empower users to make a positive impact while ensuring full accountability.
 
 
-### AIA Scan Link : https://testnet.aiascan.com/address/0xE038D2FC1f8A7Fb433C7cCC4325814e05900188E
+### [AIA Scan Link](https://testnet.aiascan.com/address/0xE038D2FC1f8A7Fb433C7cCC4325814e05900188E)
 
 
 ## Features
@@ -23,14 +23,12 @@ Open Charity is a decentralized application (dApp) that brings transparency and 
 
 ## Getting Started
 ### Prerequisites
-
 Ensure you have the following installed:
 
 - Node.js and npm: [Download here](https://nodejs.org/en/download/prebuilt-installer/)
 - MetaMask or any EVM-compatible wallet: [Download here](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en-US&utm_source=ext_sidebar)
 
 ### Installation
-
 Clone the repository and install dependencies:
 
 ```
@@ -40,7 +38,6 @@ npm install
 ```
 
 ### Development Setup
-
 To start the development server:
 
 ```
@@ -52,7 +49,6 @@ Open http://localhost:3000 to view the application in the browser.
 
 
 ## Deployment
-
 To deploy the project, we recommend using [Vercel](https://vercel.com/), as Next.js works seamlessly with it:
 1. Push your code to a GitHub repository.
 2. Import the repository into Vercel and configure the necessary environment variables.
@@ -63,26 +59,21 @@ For detailed steps, refer to [Next.js Deployment Documentation](https://nextjs.o
 
 
 ## Usage
-
 ### Connecting a Wallet
-
 1. Ensure you’re on the AIAchain network in MetaMask or any other EVM-compatible wallet.
 2. Click Connect Wallet on the homepage to initiate connection.
 
 ### Making a Donation
-
 1. Explore the list of charities and their active campaigns.
 2. Select a charity, enter the donation amount, and (optionally) a message.
 3. Confirm the transaction in MetaMask, and view the live transaction status in the app.
 
 ### Viewing Donation History
-
 - Access the dashboard to view a record of past donations, including transaction details, timestamps, and donation amounts.
 
 
 
 ## Smart Contract Overview
-
 The core functionality is handled by the `CharityDonation` smart contract, which is deployed on the AIAchain network. The contract provides:
 
 - `registerCharity` : Allows only the contract owner to register verified charities.
@@ -95,7 +86,6 @@ The contract ensures that funds are stored securely, and only authorized withdra
 
 
 ## Testing on Remix IDE
-
 For smart contract testing and deployment:
 
 1. Copy the smart contract code to [Remix IDE](https://remix.ethereum.org/).
@@ -106,7 +96,6 @@ For smart contract testing and deployment:
 
 
 ## Roadmap
-
 1. NFT Donations: Expand the donation model to include NFT-based donations.
 2. Dynamic Charity Registration: Implement a system for community-backed verification of new charities.
 3. Cross-Chain Compatibility: Integrate with other EVM-compatible chains for greater reach.
@@ -114,7 +103,6 @@ For smart contract testing and deployment:
 
 
 ## Contributing
-
 We welcome contributions! Please fork the repository, create a feature branch, and submit a pull request with your changes.
 
 1. Fork the repository
@@ -124,15 +112,11 @@ We welcome contributions! Please fork the repository, create a feature branch, a
 4. Open a pull request
 
 
-
 ## License
-
 This project is licensed under the MIT License.
 
 
-
 ## Acknowledgements
-
 - [AIAchain](https://docs.aiachain.org/aia-chain-pos-ai-and-financial-payments/introduction-to-aia-chain): For providing the blockchain infrastructure.
 - [Next.js Documentation](https://nextjs.org/docs): For extensive guidance on building apps with Next.js.
 - [Remix IDE](https://remix.ethereum.org/): For smart contract deployment and testing.
