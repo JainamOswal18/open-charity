@@ -2,24 +2,32 @@
 "use client";
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { ethers } from 'ethers';
+import dynamic from 'next/dynamic';
+
+const Alert = dynamic(() => import('@/components/Alert'), { ssr: false });
 
 // Type declaration for window.ethereum
 declare global {
   interface Window {
     ethereum?: any;
-  }
+  } 
 }
 
 interface WalletContextType {
   account: string | null;
   connectWallet: () => Promise<void>;
   disconnectWallet: () => void;
+  alert: { message: string; type: 'success' | 'error' | 'info' } | null;
+  closeAlert: () => void;
+  isReady: boolean; // New property to indicate if the context is ready
 }
 
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
 export const WalletProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [account, setAccount] = useState<string | null>(null);
+  const [alert, setAlert] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
+  const [isReady, setIsReady] = useState(false); // New state to track if the context is ready
 
   // Helper function to access `window.ethereum` safely
   const getEthereumProvider = () => {
@@ -39,16 +47,23 @@ export const WalletProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         const signer = await provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
+        setAlert({ message: `Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`, type: 'success' });
       } catch (error) {
         console.error("Failed to connect wallet:", error);
+        setAlert({ message: "Failed to connect wallet. Please try again.", type: 'error' });
       }
     } else {
-      alert("Please install MetaMask or another Ethereum wallet");
+      setAlert({ message: "Please install MetaMask or another Ethereum wallet", type: 'error' });
     }
   };
 
   const disconnectWallet = () => {
     setAccount(null);
+    setAlert({ message: "Wallet disconnected", type: 'info' });
+  };
+
+  const closeAlert = () => {
+    setAlert(null);
   };
 
   useEffect(() => {
@@ -66,6 +81,7 @@ export const WalletProvider: React.FC<{ children: React.ReactNode }> = ({ childr
           console.error("Failed to check wallet connection:", error);
         }
       }
+      setIsReady(true); // Set isReady to true after checking the connection
     };
 
     checkConnection();
@@ -92,8 +108,9 @@ export const WalletProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   }, []);
 
   return (
-    <WalletContext.Provider value={{ account, connectWallet, disconnectWallet }}>
+    <WalletContext.Provider value={{ account, connectWallet, disconnectWallet, alert, closeAlert, isReady }}>
       {children}
+      {alert && <Alert message={alert.message} type={alert.type} onClose={closeAlert} />}
     </WalletContext.Provider>
   );
 };

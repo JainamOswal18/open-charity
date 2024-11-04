@@ -15,14 +15,20 @@ import { ethers } from "ethers";
 
 export function DonationHistory() {
   const { account } = useWallet();
-  const [donations, setDonations] = useState([]);
+  const [donations, setDonations] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchDonationHistory = async () => {
       if (account) {
         try {
           const history = await getDonationHistory(account);
-          setDonations(history);
+          
+          // Convert the result to a regular array and then sort
+          const sortedDonations = [...history].sort((a: any, b: any) => 
+            Number(b.timestamp) - Number(a.timestamp)
+          );
+          
+          setDonations(sortedDonations);
         } catch (error) {
           console.error("Error fetching donation history:", error);
         }
