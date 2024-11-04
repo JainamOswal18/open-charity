@@ -1,6 +1,6 @@
 # Open Charity: A Decentralized Charity Donation Platform
 
-Open Charity is a decentralized application (dApp) that brings transparency and trust to charitable donations by leveraging blockchain technology on the AIAchain network. Users can donate to verified charities using cryptocurrency, with real-time tracking and transparent transaction records. Built with Next.js and deployed on AIAchain, Open Charity aims to empower users to make a positive impact while ensuring full accountability.
+Open Charity is a decentralized application (dApp) that brings transparency and trust to charitable donations by leveraging blockchain technology on the [AIAchain](https://aiachain.org/) network. Users can donate to verified charities using cryptocurrency, with real-time tracking and transparent transaction records. Built with [Next.js](https://nextjs.org/) and deployed on AIAchain, Open Charity aims to empower users to make a positive impact while ensuring full accountability.
 
 
 ## Features
@@ -12,10 +12,10 @@ Open Charity is a decentralized application (dApp) that brings transparency and 
 
 
 ## Technologies Used
-- Frontend: Next.js (React framework) for a dynamic and interactive UI.
+- Frontend: [Next.js](https://nextjs.org/) (React framework) for a dynamic and interactive UI.
 - Smart Contract: Solidity smart contracts for secure, on-chain charity verification and donations.
-- Blockchain: AIAchain for high-speed, low-cost transactions with EVM compatibility.
-- Wallet Integration: MetaMask or any EVM-compatible wallet for secure user connections and transactions.
+- Blockchain: [AIAchain](https://docs.aiachain.org/aia-chain-pos-ai-and-financial-payments/introduction-to-aia-chain) for high-speed, low-cost transactions with EVM compatibility.
+- Wallet Integration: [MetaMask](https://metamask.io/) or any EVM-compatible wallet for secure user connections and transactions.
 
 
 ## Getting Started
@@ -50,12 +50,12 @@ Open http://localhost:3000 to view the application in the browser.
 
 ## Deployment
 
-To deploy the project, we recommend using [Vercel](), as Next.js works seamlessly with it:
+To deploy the project, we recommend using [Vercel](https://vercel.com/), as Next.js works seamlessly with it:
 1. Push your code to a GitHub repository.
 2. Import the repository into Vercel and configure the necessary environment variables.
 3. Deploy the application with a single click.
 
-For detailed steps, refer to [Next.js Deployment Documentation]().
+For detailed steps, refer to [Next.js Deployment Documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
 
 
@@ -95,8 +95,8 @@ The contract ensures that funds are stored securely, and only authorized withdra
 
 For smart contract testing and deployment:
 
-1. Copy the smart contract code to [Remix IDE]().
-2. Compile the contract using the correct Solidity version (e.g., 0.8.x) and evm version as london (inside advanced config).
+1. Copy the smart contract code to [Remix IDE](https://remix.ethereum.org/).
+2. Compile the contract using the correct Solidity version (e.g., `0.8.x`) and evm version as london (inside advanced config).
 3. Deploy on the AIAchain network by connecting Remix to MetaMask.
 4. After deployment, note the contract address and update your frontend with this address.
 
@@ -130,9 +130,9 @@ This project is licensed under the MIT License.
 
 ## Acknowledgements
 
-- [AIAchain](): For providing the blockchain infrastructure.
-- [Next.js Documentation](): For extensive guidance on building apps with Next.js.
-- [Remix IDE](): For smart contract deployment and testing.
+- [AIAchain](https://docs.aiachain.org/aia-chain-pos-ai-and-financial-payments/introduction-to-aia-chain): For providing the blockchain infrastructure.
+- [Next.js Documentation](https://nextjs.org/docs): For extensive guidance on building apps with Next.js.
+- [Remix IDE](https://remix.ethereum.org/): For smart contract deployment and testing.
 
 
 
