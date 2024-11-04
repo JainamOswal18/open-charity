@@ -23,8 +23,8 @@ Open Charity is a decentralized application (dApp) that brings transparency and 
 
 Ensure you have the following installed:
 
-- Node.js and npm: [Download here]()
-- MetaMask or any EVM-compatible wallet: [Download here]()
+- Node.js and npm: [Download here](https://nodejs.org/en/download/prebuilt-installer/)
+- MetaMask or any EVM-compatible wallet: [Download here](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en-US&utm_source=ext_sidebar)
 
 ### Installation
 
