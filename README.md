@@ -1,4 +1,4 @@
-![Screenshot of a home page of the project](https://ibb.co/XsGWFxx)
+![Screenshot of a home page of the project]([https://ibb.co/XsGWFxx](https://i.postimg.cc/Zns5L4xn/image.png))
 
 # Open Charity: A Decentralized Charity Donation Platform
 
