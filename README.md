@@ -1,6 +1,28 @@
+# Open Charity: A Decentralized Charity Donation Platform
+
 [![image.png](https://i.postimg.cc/Zns5L4xn/image.png)](https://postimg.cc/xNHQfr7V)
 
-# Open Charity: A Decentralized Charity Donation Platform
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+   - [Development Setup](#development-setup)
+5. [Deployment](#deployment)
+6. [Usage](#usage)
+   - [Connecting a Wallet](#connecting-a-wallet)
+   - [Making a Donation](#making-a-donation)
+   - [Viewing Donation History](#viewing-donation-history)
+7. [Smart Contract Overview](#smart-contract-overview)
+8. [Testing on Remix IDE](#testing-on-remix-ide)
+9. [Roadmap](#roadmap)
+10. [Contributing](#contributing)
+11. [License](#license)
+12. [Acknowledgements](#acknowledgements)
+
+## Project Overview
 
 Open Charity is a decentralized application (dApp) that brings transparency and trust to charitable donations by leveraging blockchain technology on the [AIAchain](https://aiachain.org/) network. Users can donate to verified charities using cryptocurrency, with real-time tracking and transparent transaction records. Built with [Next.js](https://nextjs.org/) and deployed on AIAchain, Open Charity aims to empower users to make a positive impact while ensuring full accountability.
 
