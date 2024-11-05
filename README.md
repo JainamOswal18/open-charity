@@ -6,7 +6,7 @@ Open Charity is a decentralized application (dApp) that brings transparency and 
 
 
 ### [AIA Scan Link](https://testnet.aiascan.com/address/0xE038D2FC1f8A7Fb433C7cCC4325814e05900188E)
-
+### [Video Explanation Link](https://drive.google.com/file/d/1ukrhooNZnstZ_NJ_hvfPFov62tc7zgJV/view?usp=sharing)
 
 ## Features
 1. Decentralized Donations: Donate directly to charities without intermediaries, ensuring the entire amount reaches the cause.
